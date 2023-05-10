@@ -1,0 +1,7 @@
+braintree~=4.14.0
+Django==4.0.2
+Pillow
+django-crispy-forms
+
+celery~=5.2.6
+weasyprint~=54.3

@@ -1,0 +1,31 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block content %}
+  <div id="sidebar">
+    <h2>Categories</h2>
+    <ul>
+      <li {% if not category %}class="selected"{% endif %}>
+        <a href="{% url "shop:product_list" %}">Home</a>
+      </li>
+      {% for c in categories %}
+        <li {% if category.slug == c.slug %}class="selected"{% endif %}>
+          <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="center" id="home">
+        <h1 class="center">Welcome! </h1>
+
+    <p> Welcome to Rib Shack Smokehouse. We are a family owned BBQ restaurant
+            located in Omaha, Nebraska. Our mission has always been to provide great
+            tasty BBQ and Soul Food, in a nice, comfortable, welcoming atmosphere with
+            great customer service. We strive daily to overcome stereotypes and shatter
+            statistics by maintaining consistency and putting our customers first. Check out our menu below!</p>
+  </div>
+    <!DOCTYPE html>
+
+
+
+{% endblock content %}
